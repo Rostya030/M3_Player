@@ -11,28 +11,57 @@ const durationEl = document.getElementById('duration');
 const songTitleEl = document.getElementById('songTitle');
 const nextBtn = document.getElementById('nextBtn');
 const prevBtn = document.getElementById('prevBtn');
+const songCounterEl = document.getElementById('songCounter');
 
-// Здесь вам нужно указать пути к вашим песням
-// Убедитесь, что названия файлов совпадают с теми, что у вас в папке music
+// Массив с плейлистом
 const playlist = [
-  { src: "./music/Игра! Feat ‪@TRISH-A‬ Genshin Impact Песня про Арлекино.mp3" },
-  { src: "./music/KISS ME AGAIN ! .mp3" },
-  { src: "./music/Mada-Самая-_Official-Lyrics-Video_.mp3" }
+  {
+    title: "Игра! Feat @TRISH-A Genshin Impact Песня про Арлекино.mp3",
+    src: "music/8.mp3"
+  },
+  {
+    title: "KISS ME AGAIN ! .mp3",
+    src: "music/1.mp3"
+  },
+  {
+    title: "Mada-Самая-_Official-Lyrics-Video_.mp3",
+    src: "music/2.mp3"
+  },
+  {
+    title: "My Demons - RADIO TAPOK.mp3",
+    src: "music/3.mp3"
+  },
+  {
+    title: "We-Fell-Apart-ANGUISH_-AmbVsh-and-ily.mp3",
+    src: "music/4.mp3"
+  },
+  {
+    title: "А_мы_не_ангелы__парень_Братство_Атома_and_Алексей_Понамарёв.mp3",
+    src: "music/5.mp3"
+  },
+  {
+    title: "ангел-хранитель-я-про-рок.mp3",
+    src: "music/6.mp3"
+  },
+  {
+    title: "машина-для-убийств-алёна-швец.mp3",
+    src: "music/9.mp3"
+  },
+  {
+    title: "вредина-алёна-швец.mp3",
+    src: "music/7.mp3"
+  }
 ];
 
 let currentTrackIndex = 0;
 
-function getTitleFromSrc(src) {
-  const fileName = src.split('/').pop();
-  return fileName.replace('.mp3', '');
-}
-
 function loadTrack(index) {
   audio.src = playlist[index].src;
-  songTitleEl.textContent = getTitleFromSrc(playlist[index].src);
+  songTitleEl.textContent = playlist[index].title;
   audio.load();
   audio.play();
   playPauseBtn.textContent = 'Стоп';
+  songCounterEl.textContent = `${index + 1}/${playlist.length}`;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
