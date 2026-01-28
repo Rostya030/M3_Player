@@ -16,10 +16,6 @@ const songCounterEl = document.getElementById('songCounter');
 // Массив с плейлистом
 const playlist = [
   {
-    title: "Игра! Feat @TRISH-A Genshin Impact Песня про Арлекино.mp3",
-    src: "music/8.mp3"
-  },
-  {
     title: "KISS ME AGAIN ! .mp3",
     src: "music/1.mp3"
   },
@@ -44,12 +40,16 @@ const playlist = [
     src: "music/6.mp3"
   },
   {
-    title: "машина-для-убийств-алёна-швец.mp3",
-    src: "music/9.mp3"
-  },
-  {
     title: "вредина-алёна-швец.mp3",
     src: "music/7.mp3"
+  },
+  {
+    title: "Игра! Feat @TRISH-A Genshin Impact Песня про Арлекино.mp3",
+    src: "music/8.mp3"
+  },
+  {
+    title: "машина-для-убийств-алёна-швец.mp3",
+    src: "music/9.mp3"
   }
 ];
 
